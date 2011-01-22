@@ -31,8 +31,9 @@ Gem::Specification.new do |s|
     "VERSION",
     "init.rb",
     "install.rb",
-    "lib/menu_helper.rb",
     "lib/semantic_menu.rb",
+    "lib/semantic_menu/menu_helper.rb",
+    "lib/semantic_menu/menu_item.rb",
     "lib/tasks/semantic_menu_tasks.rake",
     "public/semantic-menu.html",
     "public/stylesheets/semantic-menu.css",
@@ -44,7 +45,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/michaek/semantic_menu}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.7}
+  s.rubygems_version = %q{1.4.2}
   s.summary = %q{A plugin to make rails menus easier to write}
   s.test_files = [
     "test/helper.rb",
@@ -52,7 +53,6 @@ Gem::Specification.new do |s|
   ]
 
   if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
