@@ -18,7 +18,12 @@ class MenuItem
   end
 
   def to_s
-    content_tag :li, SemanticMenu::Util.html_safe(link_to(@title, @link, @link_opts) + child_output), ({:class => 'active'} if active?)
+    css_classes = ""
+    css_classes << " active" if active?
+    css_classes << " current" if on_current_page?
+    @link_opts[:class] = @link_opts[:class] || ""
+    @link_opts[:class] << css_classes
+    content_tag :li, SemanticMenu::Util.html_safe(link_to(@title, @link, @link_opts) + child_output)
   end
 
   def level_class
